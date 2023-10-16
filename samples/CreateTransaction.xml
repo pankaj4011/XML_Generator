@@ -1,0 +1,46 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fcub="http://fcubs.ofss.com/service/FCUBSRTService">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fcub:CREATETRANSACTION_FSFS_REQ>
+         <fcub:FCUBS_HEADER>
+            <fcub:SOURCE>GCFRONT</fcub:SOURCE>
+            <fcub:UBSCOMP>FCUBS</fcub:UBSCOMP>
+            <fcub:USERID>JITHUB1</fcub:USERID>
+            <fcub:BRANCH>901</fcub:BRANCH>
+            <fcub:SERVICE>FCUBSRTService</fcub:SERVICE>
+            <fcub:OPERATION>CreateTransaction</fcub:OPERATION>
+         </fcub:FCUBS_HEADER>
+         <fcub:FCUBS_BODY>
+            <fcub:Transaction-Details>
+               <fcub:PRD>VD01</fcub:PRD>
+               <fcub:BRN></fcub:BRN>
+               <fcub:TXNBRN></fcub:TXNBRN>
+               <fcub:TXNACC></fcub:TXNACC>
+ --debited
+               <fcub:TXNCCY>JPY</fcub:TXNCCY>
+               <fcub:TXNAMT>2</fcub:TXNAMT>
+                <fcub:OFFSETBRN></fcub:OFFSETBRN>
+               <fcub:OFFSETACC></fcub:OFFSETACC>
+ --credited
+               <fcub:OFFSETCCY></fcub:OFFSETCCY>
+               <fcub:OFFSETAMT></fcub:OFFSETAMT>
+               <fcub:TXNDATE>2022-09-10</fcub:TXNDATE>
+               <!--Optional:-->
+               <fcub:VALDATE>2022-09-10</fcub:VALDATE>
+               <fcub:NARRATIVE>TESTING SMA-4325</fcub:NARRATIVE>
+               <fcub:Udf-Details>
+                  <!--Optional:-->
+                  <fcub:FUNCTIONID>?</fcub:FUNCTIONID>
+                  <fcub:FIELD_NAME>PURPOSE_ACC_DR</fcub:FIELD_NAME>
+                  <!--Optional:-->
+                  <fcub:DATATYPE>?</fcub:DATATYPE>
+                  <!--Optional:-->
+                  <fcub:FIELD_VALUE>1</fcub:FIELD_VALUE>
+                  <!--Optional:-->
+                  <fcub:VAL_TYPE>?</fcub:VAL_TYPE>
+               </fcub:Udf-Details>
+            </fcub:Transaction-Details>
+         </fcub:FCUBS_BODY>
+      </fcub:CREATETRANSACTION_FSFS_REQ>
+   </soapenv:Body>
+</soapenv:Envelope>
