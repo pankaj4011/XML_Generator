@@ -94,14 +94,19 @@ public class Generator {
 				outputFilePath = Initializer.getInstance().getProperty("Output_File_Path");
 				inputFileName = Initializer.getInstance().getProperty("Input_XML_File_Name");
 				Document doc = b.parse(new File(sampleFilePath + "\\" + inputFileName));
-				outputFileName = inputFileName + "_" + i + ".xml";
+				outputFileName = inputFileName + "_" + (i + 1) + ".xml";
 
 				for (int j = 0; j < columnCounter; j++) {
-					Element element1 = (Element) doc.getElementsByTagName(columnNames.get(j)).item(0);
-
 					String value = tagData.get(dataCounter++);
-					element1.setTextContent(value);
+					// List<Element> elements = (List<Element>)
+					// doc.getElementsByTagName(columnNames.get(j));
+					NodeList nodes = doc.getElementsByTagName(columnNames.get(j));
+					for (int k = 0; k < nodes.getLength(); k++) {
+						Element element = (Element) nodes.item(k);
+						element.setTextContent(value);
+					}
 				}
+
 				TransformerFactory transformerFactory = TransformerFactory.newInstance();
 				Transformer transformer = transformerFactory.newTransformer();
 				DOMSource source = new DOMSource(doc);
