@@ -15,6 +15,8 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.w3c.dom.*;
+import logger.XMLLogger;
+
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
@@ -24,6 +26,7 @@ public class Generator {
 	private static List<String> tagData = new ArrayList<String>();
 	private static List<String> columnNames = new ArrayList<String>();
 	private static int dataCounter = 0;
+    public static XMLLogger log = XMLLogger.getInstance();
 
 	public static void main(String[] args) {
 		// Reading the data from the excel file
@@ -43,7 +46,7 @@ public class Generator {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 			Iterator<Row> rowIterator = sheet.iterator();
-
+			log.info("pankaj");
 			// Getting the Column Headings
 			Row firstRow = rowIterator.next();
 			Iterator<Cell> firstCell = firstRow.cellIterator();
